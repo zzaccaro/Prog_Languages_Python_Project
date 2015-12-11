@@ -1,0 +1,16 @@
+E Adam Eve Bill
+E Adam Eve Stacy
+E Bob Mary Zach
+E Stacy Andrew Matt
+E Matt Liz Danny
+E Steve Taylor Greg
+E Chris Becky
+R Adam Eve
+R Adam Bob
+W spouse Adam
+W parent Bob
+X Steve spouse mary
+X Adam ancestor zach
+R adam greg
+W cousin 1 1 zach
+W spouse becky

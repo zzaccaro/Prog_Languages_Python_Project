@@ -1,5 +1,8 @@
-#!/Users/wildcat/AppData/Local/Programs/Python/Python35-32/python.exe
+#!C:/Users/wildcat/AppData/Local/Programs/Python/Python35-32/python.exe
 ### PYTHON FAMILY TREE PROJECT ###
+# By Zach Zaccaro and Chris Junker
+
+import sys
 
 ### PERSON CLASS ###
 class Person:
@@ -336,25 +339,42 @@ def getStrangers(p):
 
 # main method
 def main():
-    E('Adam', 'Eve', 'Bob')
-    E('Adam', 'Eve', 'Stacy')
-    E('Bob', 'Mary', 'Zach')
-    E('Stacy', 'Andrew', 'Matt')
-    E('Matt', 'Liz', 'Danny')
-    E('Steve', 'Taylor', 'Greg')
-    E('Chris', 'Becky')
+    for line in sys.stdin:
+        args = line.split()
 
-    print(R('Adam', 'Eve'))
-    print(R('Adam', 'Bob'))
-    print(R('Adam', 'zach'))
-    print(W('spouse', 'Adam'))
-    print(W('parent', 'Bob'))
-    print(X('Steve', 'spouse', 'mary'))
-    print(X('Adam', 'ancestor', 'zach'))
-    print(R('adam', 'greg'))
-    print(W(['cousin', 1, 1], 'zach'))
-    print(W('spouse', 'becky'))
-
+        if args[0] == 'E':
+            if len(args) > 3:
+                E(args[1], args[2], args[3])
+            else:
+                E(args[1], args[2], '')
+        elif args[0] == 'R':
+            print(args[0] + ' ' + args[1] + ' ' + args[2])
+            print(R(args[1], args[2]))
+            print('')
+        elif args[0] == 'W':
+            if args[1] == 'cousin':
+                print(args[0] + ' ' + args[1] + ' ' + args[2] + ' ' + args[3] + ' ' + args[4])
+                args[2] = int(args[2])
+                args[3] = int(args[3])
+                wPeople = W([args[1], args[2], args[3]], args[4])
+                for i in wPeople:
+                    print(i)
+            else:
+                print(args[0] + ' ' + args[1] + ' ' + args[2])
+                wPeople = W(args[1],args[2])
+                for i in wPeople:
+                    print(i)
+            print('')
+        elif args[0] == 'X':
+            if args[2] == 'cousin':
+                print(args[0] + ' ' + args[1] + ' ' + args[2] + ' ' + args[3] + ' ' + args[4] + ' ' + args[5])
+                args[3] = int(args[3])
+                args[4] = int(args[4])
+                print(X(args[1], [args[2], args[3], args[4]], args[5]))
+            else:
+                print(args[0] + ' ' + args[1] + ' ' + args[2] + ' ' + args[3])
+                print(X(args[1], args[2], args[3]))
+            print('')
 
 
 if  __name__ =='__main__':main()

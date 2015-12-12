@@ -1,18 +1,31 @@
-E Adam Eve Bill
-E Adam Eve Stacy
-E Bill Mary Zach
-E Stacy Andrew Matt
-E Matt Liz Danny
-E Steve Taylor Greg
-E Chris Becky
 R Adam Eve
+spouse
+
 R Adam Bill
+parent
+
 W spouse Adam
+Eve
+
 W parent Bill
+Adam
+Eve
+
 X Steve spouse mary
+No
+
 X Adam ancestor zach
+Yes
+
 R adam greg
+unrelated
+
 W cousin 1 1 zach
+Danny
+
 W spouse becky
+Chris
+
 X Adam cousin 1 1 Eve
-W cousin 1 0 zach
+No
+

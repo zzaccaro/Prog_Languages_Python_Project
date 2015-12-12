@@ -1,0 +1,14 @@
+E bill sue tim
+E bill sue jan
+E bill sue jim
+E bill sue jill
+E tim janice bob
+E dave jan tom
+X bob cousin 1 0 tom
+E bob tina tommy
+E tom jean jamie
+R tommy jamie
+X tommy cousin 2 0 jamie
+E steve jamie andy
+X andy cousin 2 1 tommy
+R tommy andy
